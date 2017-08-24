@@ -1,7 +1,7 @@
 {
 	"name" : "slavkodick/cobby",
 	"description" : "This extension for Magento 2 provides a direct integration of the cobby management methods to your Magento 2 shop.",
-	"version" : "1.0.0",
+	"version" : "1.0.1",
 	"require" : {
 		"php" : ">=5.6.0"
 	},
