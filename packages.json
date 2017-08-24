@@ -1,10 +1,10 @@
 {
-    "name": "Cobby",
-    "author": "Slavko Dick",
-    "description": "This is for testing purposes",
-    "version": "1.0.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/slavkodick/cobby.git"
+    "packages": {
+        "slavkodick/cobby": {
+            "dev-master": { @composer.json },
+            "1.0.x-dev": { @composer.json },
+            "0.0.1": { @composer.json },
+            "1.0.0": { @composer.json }
+        }
     }
 }
