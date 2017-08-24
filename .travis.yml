@@ -29,7 +29,7 @@ cache:
     - $HOME/.local
 before_install:
   - composer config -g http-basic.repo.magento.com $MAGE_PUBLICKEY $MAGE_PRIVATEKEY
-  - chmod +x ./dev/travis/*
+  - chmod +x ./travis/travis/*
   - ./dev/travis/before_install.sh
 before_script: ./dev/travis/before_script.sh
 script: ./dev/travis/script.sh
