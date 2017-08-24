@@ -26,12 +26,12 @@
 			"registration.php"
 		],
 		"psr-4" : {
-			"Mash2\\Gateway\\" : ""
+			"Mash2\\Cobby\\" : ""
 		}
 	},
 	"authors" : [{
 			"name" : "Bobo",
-			"email" : "bobo@mail.com"
+			"email" : "bobo@no_reply.com"
 		}
 	]
 }
