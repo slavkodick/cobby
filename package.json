@@ -1,0 +1,10 @@
+{
+    "name": "Cobby",
+    "author": "Slavko Dick",
+    "description": "This is for testing purposes",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/slavkodick/cobby"
+    }
+}
