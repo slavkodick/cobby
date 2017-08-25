@@ -19,8 +19,8 @@ echo "==> Installing Magento 2"
 mysql -uroot -e 'CREATE DATABASE magento2;'
 php bin/magento setup:install -q --admin-user="admin" --admin-password="123123q" --admin-email="admin@example.com" --admin-firstname="John" --admin-lastname="Doe" --db-name="magento2"
 
-#echo "==> Copying the current build to the Magento 2 installation."
-#cp -R ../magento-ce/* cobby/vendor/magento2/
+echo "==> Copying the current build to the Magento 2 installation."
+cp -R  ../vendor/* magento-ce/vendor/
 
 # enable the extension, do other relavant mage tasks.
 echo "==> Enable extension, do mage tasks..."
