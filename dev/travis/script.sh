@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo '==> Doing phpcs tests with MEQP2 Standard setting.'
-./.php_cs . --ignore=vendor/ --standard=MEQP2;
+./vendor/bin/phpcs . --ignore=vendor/ --standard=MEQP2;
 
 cd ../magento-ce
 echo '==> Doing unit tests.';

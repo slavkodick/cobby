@@ -118,4 +118,4 @@ done
 # go into the actual cloned repo to do make preparations for the EQP tests.
 echo "==> Doing preparations for EQP tests."
 composer update
-./.php_cs --config-set installed_paths vendor/magento/marketplace-eqp
+./vendor/bin/phpcs --config-set installed_paths vendor/magento/marketplace-eqp
