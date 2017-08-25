@@ -116,7 +116,7 @@ for test_suite in ${test_suites[@]}; do
 done
 
 # go into the actual cloned repo to do make preparations for the EQP tests.
-echo "==> Doing preparations for EQP tests."
-cd ../cobby
-composer update
-./vendor/bin/phpcs --config-set installed_paths vendor/magento/marketplace-eqp
+#echo "==> Doing preparations for EQP tests."
+#cd ../cobby
+#composer update
+#./vendor/bin/phpcs --config-set installed_paths vendor/magento/marketplace-eqp
