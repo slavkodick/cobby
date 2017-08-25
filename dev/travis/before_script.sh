@@ -11,7 +11,7 @@ cd ..
 composer create-project "magento/community-edition:$magento" magento-ce
 cd "magento-ce"
 
-# require the heidelpay extension to make it usable (autoloading)
+# require the cobby extension to make it usable (autoloading)
 echo "==> Requiring slavkodick/cobby from the dev-$TRAVIS_BRANCH branch"
 composer require "slavkodick/cobby:dev-$TRAVIS_BRANCH"
 
@@ -117,6 +117,6 @@ done
 
 # go into the actual cloned repo to do make preparations for the EQP tests.
 echo "==> Doing preparations for EQP tests."
-cd ../magento2
+cd ../cobby
 composer update
 ./vendor/bin/phpcs --config-set installed_paths vendor/magento/marketplace-eqp
