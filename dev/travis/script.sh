@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo '==> Doing phpcs tests with MEQP2 Standard setting.'
+cd ..
 ls
 sleep 5
 ../magento-ce/vendor/bin/phpcs . --ignore=vendor/ --standard=MEQP2;
