@@ -117,6 +117,5 @@ done
 
 # go into the actual cloned repo to do make preparations for the EQP tests.
 echo "==> Doing preparations for EQP tests."
-cd ../cobby
 composer update
-../magento-ce/bin/phpcs --config-set installed_paths vendor/magento/marketplace-eqp
+./vendor/bin/phpcs --config-set installed_paths vendor/magento/marketplace-eqp
