@@ -9,6 +9,7 @@ mkdir -p "$HOME/.php-cs-fixer"
 echo "==> Installing Magento 2 CE (Version $magento) over composer create-project ..."
 cd ..
 composer create-project "magento/community-edition:$magento" magento-ce
+composer remove fabpot/php-cs-fixer
 cd "magento-ce"
 
 # require the cobby extension to make it usable (autoloading)
@@ -118,7 +119,7 @@ composer require "squizlabs/php_codesniffer:*"
 #installing magento code-standard
 composer require "magento-ecg/coding-standard:*"
 
-cmposer update
+composer update
 
 # go into the actual cloned repo to do make preparations for the EQP tests.
 #echo "==> Doing preparations for EQP tests."
