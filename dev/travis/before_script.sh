@@ -15,16 +15,16 @@ cd "magento-ce"
 echo "==> Requiring slavkodick/cobby from the dev-$TRAVIS_BRANCH branch"
 composer require "slavkodick/cobby:dev-$TRAVIS_BRANCH"
 
-echo "==> Installing Magento 2"
+#echo "==> Installing Magento 2"
 #mysql -uroot -e 'CREATE DATABASE magento2;'
 #php bin/magento setup:install -q --admin-user="admin" --admin-password="123123q" --admin-email="admin@example.com" --admin-firstname="John" --admin-lastname="Doe" --db-name="magento2"
-
-# enable the extension, do other relavant mage tasks.
-echo "==> Enable extension, do mage tasks..."
-php bin/magento module:enable Mash2_Cobby
-php bin/magento setup:upgrade
-php bin/magento cache:flush
-php bin/magento setup:di:compile
+#
+## enable the extension, do other relavant mage tasks.
+#echo "==> Enable extension, do mage tasks..."
+#php bin/magento module:enable Mash2_Cobby
+#php bin/magento setup:upgrade
+#php bin/magento cache:flush
+#php bin/magento setup:di:compile
 
 # definition for the test suites
 #test_suites=("integration" "unit")
@@ -117,7 +117,6 @@ composer require "squizlabs/php_codesniffer:*"
 
 #installing magento code-standard
 composer require "magento-ecg/coding-standard:*"
-
 composer update
 
 # go into the actual cloned repo to do make preparations for the EQP tests.
