@@ -24,31 +24,23 @@ class CobbyApi extends \Magento\Framework\App\Helper\AbstractHelper
     private $productMetadata;
 
     /**
-     * @var \Psr\Log\LoggerInterface
-     */
-    private $logger;
-
-    /**
      * constructor.
      *
      * @param \Magento\Framework\App\Helper\Context     $context
      * @param \Mash2\Cobby\Helper\Settings              $settings
      * @param \Magento\Framework\HTTP\ZendClientFactory $httpClientFactory
-     * @param \Psr\Log\LoggerInterface                  $logger
      * @param \Magento\Framework\App\ProductMetadata    $productMetadata
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
         \Mash2\Cobby\Helper\Settings $settings,
         \Magento\Framework\HTTP\ZendClientFactory $httpClientFactory,
-        \Psr\Log\LoggerInterface $logger,
         \Magento\Framework\App\ProductMetadata $productMetadata
     ) {
         parent::__construct($context);
         $this->settings = $settings;
         $this->httpClientFactory = $httpClientFactory;
         $this->productMetadata = $productMetadata;
-        $this->logger = $logger;
     }
 
     /**
@@ -136,7 +128,7 @@ class CobbyApi extends \Magento\Framework\App\Helper\AbstractHelper
             try {
                 $this->restPost('notify', $request);
             } catch (\Exception $e) { // Zend_Http_Client_Adapter_Exception
-                $this->logger->info($e);
+                $this->_logger->info($e);
             }
         }
     }

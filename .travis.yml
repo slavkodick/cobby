@@ -9,19 +9,21 @@ addons:
     - postfix
 language: php
 php:
-
+  - 5.6
   - 7.0
 env:
   global:
-    - INTEGRATION_SETS=3
+#    - INTEGRATION_SETS=3
   matrix:
-
+    - magento=2.0.6
+    - magento=2.1.1
     - magento=2.1.6
+    - magento=2.1.8
 matrix:
   fast_finish: true
-  exclude:
-    - php: 5.6
-      env: magento=2.1.6
+#  exclude:
+#    - php: 5.6
+#      env: magento=2.1.6
 cache:
   directories:
     - $HOME/.composer/cache
