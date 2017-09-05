@@ -112,7 +112,15 @@ for test_suite in ${test_suites[@]}; do
     esac
 done
 
+#updating code_sniffer
+composer require "squizlabs/php_codesniffer:*"
+
+#installing magento code-standard
+composer require "magento-ecg/coding-standard:*"
+
+cmposer update
+
 # go into the actual cloned repo to do make preparations for the EQP tests.
-echo "==> Doing preparations for EQP tests."
-composer update
-./vendor/bin/phpcs --config-set installed_paths vendor/magento/marketplace-eqp
+#echo "==> Doing preparations for EQP tests."
+#composer update
+#./vendor/bin/phpcs --config-set installed_paths vendor/magento/marketplace-eqp

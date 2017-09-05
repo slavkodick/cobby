@@ -34,20 +34,27 @@ class Queue extends \Magento\Framework\App\Helper\AbstractHelper
      * @var \Mash2\Cobby\Helper\Settings
      */
     private $cobbySettings;
+    /**
+     * @var \Psr\Log\LoggerInterface
+     */
+    private $logger;
 
     /**
      * constructor.
+     *
      * @param \Magento\Framework\App\Helper\Context $context
-     * @param CobbyApi $cobbyApi
-     * @param \Mash2\Cobby\Model\QueueFactory $queueFactory
-     * @param \Magento\Framework\Registry $registry
-     * @param Settings $cobbySettings
+     * @param CobbyApi                              $cobbyApi
+     * @param \Mash2\Cobby\Model\QueueFactory       $queueFactory
+     * @param \Magento\Framework\Registry           $registry
+     * @param \Psr\Log\LoggerInterface              $logger
+     * @param Settings                              $cobbySettings
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
         \Mash2\Cobby\Helper\CobbyApi $cobbyApi,
         \Mash2\Cobby\Model\QueueFactory $queueFactory,
         \Magento\Framework\Registry $registry,
+        \Psr\Log\LoggerInterface $logger,
         \Mash2\Cobby\Helper\Settings $cobbySettings
     ) {
         parent::__construct($context);
@@ -55,6 +62,7 @@ class Queue extends \Magento\Framework\App\Helper\AbstractHelper
         $this->cobbyApi = $cobbyApi;
         $this->registry = $registry;
         $this->cobbySettings = $cobbySettings;
+        $this->logger = $logger;
     }
 
     /**
@@ -105,7 +113,7 @@ class Queue extends \Magento\Framework\App\Helper\AbstractHelper
                 $this->cobbyApi->notifyCobbyService($entity, $action, $queueIds[0]);
 
             } catch (\Exception $e) {
-
+                return;
             }
         }
 

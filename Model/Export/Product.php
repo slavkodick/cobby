@@ -861,7 +861,7 @@ class Product extends \Mash2\Cobby\Model\Export\AbstractEntity
 
             $result = $transportObject->getData();
         }
-
+        
         return $result;
     }
 

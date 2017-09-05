@@ -32,20 +32,23 @@ class Debug implements \Mash2\Cobby\Api\DebugInterface
     {
         $result = array();
 
-        $collection = $this->productCollectionFactory->create();
-
         foreach ($this->storeManager->getStores(true) as $store) {
-            $productCountAll = $collection
-                ->addStoreFilter($store->getId())
-                ->getSize();
+            foreach ($this->productCollectionFactory->create()->getProductTypeIds() as $productType) {
+                $typeCount[$productType] =  $this->productCollectionFactory
+                    ->create()
+                    ->addStoreFilter($store->getId())
+                    ->addAttributeToFilter('type_id', $productType)
+                    ->getSize();
+            }
 
             $result[] = array(
-                "store_id" => $store->getId(),
-                "store_name" => $store->getName(),
-                "store_code" => $store->getCode(),
-                "website_id" => $store->getWebsite()->getId(),
-                "website_name" => $store->getWebsite()->getName(),
-                "product_count_all" => $productCountAll);
+                "store_id"              => $store->getId(),
+                "store_name"            => $store->getName(),
+                "store_code"            => $store->getCode(),
+                "website_id"            => $store->getWebsite()->getId(),
+                "website_name"          => $store->getWebsite()->getName(),
+                "product_count"         => array_sum($typeCount),
+                "product_types"         => $typeCount);
         }
 
         return $result;

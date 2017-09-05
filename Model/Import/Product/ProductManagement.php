@@ -271,11 +271,11 @@ class ProductManagement extends AbstractManagement// \Magento\CatalogImportExpor
             $transportObject->setData($data);
 
             $this->eventManager->dispatch('cobby_import_product_import_before', array(
-                'productIds' => $productIds, 'skus' => $skus));
+                'transport' => $transportObject));
 
             $this->saveProducts($rows);
 
-            $this->eventManager->dispatch('cobby_import_product_import_after', $transportObject);
+            $this->eventManager->dispatch('cobby_import_product_import_after', array('transport' => $transportObject));
         }
 
         foreach ($this->newSkus as $sku => $data) {
