@@ -13,7 +13,7 @@ php:
   - 7.0
 env:
   global:
-#    - INTEGRATION_SETS=3
+    - INTEGRATION_SETS=3
   matrix:
     - magento=2.0.6
     - magento=2.1.1
