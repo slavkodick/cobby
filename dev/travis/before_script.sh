@@ -9,7 +9,6 @@ mkdir -p "$HOME/.php-cs-fixer"
 echo "==> Installing Magento 2 CE (Version $magento) over composer create-project ..."
 cd ..
 composer create-project "magento/community-edition:$magento" magento-ce
-composer remove "fabpot/php-cs-fixer:*"
 cd "magento-ce"
 
 # require the cobby extension to make it usable (autoloading)
