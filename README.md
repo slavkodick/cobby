@@ -11,10 +11,13 @@ product management for magento2 shops
 ## LICENSE
 [License](LICENSE.txt)
 
-## Release Notes
+## Releases
 [Releases](https://github.com/slavkodick/cobby/releases)
+
+## Release Notes 
+[Release Notes](https://www.cobby.io/category/releasenotes-2/)
 
 ## Installation
 ### Install with composer package
-* ```composer require "slavkodick/cobby:*"```
+* ```composer require "slavkodick/cobby:dev-master"```
 
