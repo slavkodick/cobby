@@ -41,3 +41,4 @@ script:
   # run phpcs
   - cd $HOME/ce/vendor
   - ./bin/phpcs --standard=./magento-ecg/coding-standard/EcgM2/ ./slavkodick/cobby/
+  - echo "finished"
