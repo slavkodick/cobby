@@ -4,7 +4,7 @@ dist: trusty
 language: php
 
 php:
-  - 7.0.6
+  - 7.0
 
 env:
     - magento=2.1.6
@@ -21,6 +21,7 @@ before_install:
   - cd $HOME
   - composer config -g http-basic.repo.magento.com $MAGE_PUBLICKEY $MAGE_PRIVATEKEY
   - chmod +x $HOME/*
+  - echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
 install:
   # install magento to home directory
