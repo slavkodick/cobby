@@ -9,6 +9,7 @@
 product management for magento2 shops
 
 ## LICENSE
+[License](LICENSE.txt)
 
 ## Release Notes
 [Releases](https://github.com/slavkodick/cobby/releases)
