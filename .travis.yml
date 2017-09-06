@@ -13,13 +13,14 @@ branches:
   only:
     - master
 
-cache:
-  directories:
-    - $HOME/.composer/cache
+#cache:
+#  directories:
+#    - $HOME/.composer/cache
 
 before_install:
+  - cd $HOME
   - composer config -g http-basic.repo.magento.com $MAGE_PUBLICKEY $MAGE_PRIVATEKEY
-  - chmod +x ./dev/travis/*
+  - chmod +x $HOME/*
 
 install:
   # install magento to home directory
