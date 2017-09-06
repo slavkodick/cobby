@@ -4,7 +4,7 @@ dist: trusty
 language: php
 
 php:
-  - 7.0
+  - 7.0.6
 
 env:
     - magento=2.1.6
