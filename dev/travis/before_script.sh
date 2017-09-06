@@ -26,7 +26,7 @@ php bin/magento setup:upgrade
 php bin/magento cache:flush
 php bin/magento setup:di:compile
 
-#definition for the test suites
+# definition for the test suites
 test_suites=("integration" "unit")
 integration_levels=(1 2 3)
 
