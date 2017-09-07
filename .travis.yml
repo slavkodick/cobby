@@ -40,10 +40,14 @@ install:
   - composer require slavkodick/cobby:dev-master
 
   # update cs and standards
-  - composer require squizlabs/php_codesniffer:*
-  - composer require magento-ecg/coding-standard:*
+#  - composer require squizlabs/php_codesniffer:*
+#  - composer require magento-ecg/coding-standard:*
 
   - composer update
+
+  # debug
+  - ./bin/phpcs --version
+  - cd ./magento-ecg/coding-standard
 
 script:
   # run phpcs

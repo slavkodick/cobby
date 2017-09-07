@@ -106,7 +106,7 @@ class Queue extends \Magento\Framework\App\Helper\AbstractHelper
                 $this->cobbyApi->notifyCobbyService($entity, $action, $queueIds[0]);
 
             } catch (\Exception $e) {
-//                $this->_logger->info($e);
+                $this->_logger->info($e);
             }
         }
 
