@@ -41,5 +41,5 @@ install:
 script:
   # run phpcs
   - cd $HOME/ce/vendor
-  - ./bin/phpcs --standard=./magento-ecg/coding-standard/EcgM2/ --warning-severity=8 ./slavkodick/cobby/
+  - ./bin/phpcs --standard=./magento-ecg/coding-standard/EcgM2/ --warning-severity=5 ./slavkodick/cobby/
  
