@@ -16,9 +16,9 @@ env:
   - magento=2.1.7
   - magento=2.1.8
 
-branches:
-  only:
-    - master
+#branches:
+#  only:
+#    - master
 
 cache:
   directories:
@@ -27,8 +27,8 @@ cache:
 before_install:
   - cd $HOME
   - composer config -g http-basic.repo.magento.com $MAGE_PUBLICKEY $MAGE_PRIVATEKEY
-  - chmod +x $HOME/*
-  - echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+#  - chmod +x $HOME/*
+#  - echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
 install:
   # install magento to home directory
@@ -40,14 +40,10 @@ install:
   - composer require slavkodick/cobby:dev-master
 
   # update cs and standards
-#  - composer require squizlabs/php_codesniffer:*
-#  - composer require magento-ecg/coding-standard:*
+  - composer require squizlabs/php_codesniffer:*
+  - composer require magento-ecg/coding-standard:*
 
   - composer update
-
-  # debug
-  - ./bin/phpcs --version
-  - cd ./magento-ecg/coding-standard
 
 script:
   # run phpcs
