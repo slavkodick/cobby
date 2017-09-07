@@ -41,5 +41,5 @@ install:
 script:
   # run phpcs
   - cd $HOME/ce/vendor
-  - ./bin/phpcs ./slavkodick/cobby/
+  - ./bin/phpcs --warning-severity=8 ./slavkodick/cobby/
  
