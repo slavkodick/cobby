@@ -37,9 +37,11 @@ install:
   # override cobby with the commited version
   - cd $HOME/ce/vendor/slavkodick
   - rm -rf cobby
-  - cp -R $TRAVIS_BUILD_DIR/../slavkodick $HOME/ce/vendor/slavkodick
-  - cd $HOME/ce
-  - composer dump-autoload
+  - $TRAVIS_BUILD_DIR/
+  - sleep 10
+#  - cp -R $TRAVIS_BUILD_DIR/../slavkodick $HOME/ce/vendor/slavkodick
+#  - cd $HOME/ce
+#  - composer dump-autoload
 
 script:
   # run phpcs
