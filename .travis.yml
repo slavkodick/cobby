@@ -35,8 +35,8 @@ install:
   - composer require magento-ecg/coding-standard:*
 
   # override cobby with the commited version
-  - cd $HOME/ce/vendor/slavkodick
-  - rm -rf cobby
+  - cd $HOME/ce/vendor/slavkodick/cobby/
+  - rm -rf *
 #  - ls $TRAVIS_BUILD_DIR/
 #  - sleep 10
   - cp -R $TRAVIS_BUILD_DIR/* $HOME/ce/vendor/slavkodick/cobby/
