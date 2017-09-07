@@ -16,10 +16,6 @@ env:
   - magento=2.1.7
   - magento=2.1.8
 
-#branches:
-#  only:
-#    - master
-
 cache:
   directories:
     - $HOME/.composer/cache
@@ -27,8 +23,6 @@ cache:
 before_install:
   - cd $HOME
   - composer config -g http-basic.repo.magento.com $MAGE_PUBLICKEY $MAGE_PRIVATEKEY
-#  - chmod +x $HOME/*
-#  - echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
 install:
   # install magento to home directory
