@@ -8,10 +8,7 @@ php:
   - 7.0
 
 env:
-  - magento=2.0.5
-  - magento=2.0.8
-  - magento=2.0.15
-  - magento=2.1.1
+  - magento=2.1.5
   - magento=2.1.6
   - magento=2.1.7
   - magento=2.1.8
@@ -31,13 +28,18 @@ install:
 
   # install cobby
   - cd ce
-  - composer require slavkodick/cobby:dev-$TRAVIS_BRANCH
+  - composer require slavkodick/cobby
 
   # update cs and standards
   - composer require squizlabs/php_codesniffer:*
   - composer require magento-ecg/coding-standard:*
 
-  - composer update
+  # override cobby with the commited version
+  - cd $HOME/ce/vendor/slavkodick
+  - rm -rf cobby
+  - cp -R $TRAVIS_BUILD_DIR/../slavkodick $HOME/ce/vendor/slavkodick
+  - cd $HOME/ce
+  - composer dump-autoload
 
 script:
   # run phpcs
